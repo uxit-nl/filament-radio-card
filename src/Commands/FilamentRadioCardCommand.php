@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Uxit\FilamentRadioCard\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FilamentRadioCardCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-radio-card';
 
     public $description = 'My command';
 
