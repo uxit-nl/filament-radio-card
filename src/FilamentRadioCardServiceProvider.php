@@ -35,8 +35,7 @@ class FilamentRadioCardServiceProvider extends PackageServiceProvider
                 $command
                     ->publishConfigFile()
                     ->publishMigrations()
-                    ->askToRunMigrations()
-                    ->askToStarRepoOnGitHub('uxit/filament-radio-card');
+                    ->askToRunMigrations();
             });
 
         $configFileName = $package->shortName();
