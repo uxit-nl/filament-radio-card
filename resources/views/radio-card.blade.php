@@ -2,7 +2,8 @@
     <div class="mt-4 grid grid-cols-1 gap-y-6 sm:flex sm:justify-between sm:gap-x-4">
         @foreach ($getOptions() as $option)
             <label
-                class="flex flex-1 flex-col basis-0 grow cursor-pointer rounded-lg border shadow-sm focus:outline-none @if ($getState() == $option['value']) awesome-border @endif">
+                class="flex flex-1 flex-col basis-0 grow cursor-pointer rounded-lg border shadow-sm focus:outline-none border-2"
+                style="@if ($getState() == $option['value']) border-color: {{ $getBorderColor() }}; @endif">
                 {{-- @if ($getState() === $option['value']) style="border: 3px solid {{ $getBorderColor() }}" @endif> --}}
                 {{-- top of card, if an image is present --}}
 
