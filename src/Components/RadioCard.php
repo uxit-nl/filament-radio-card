@@ -31,4 +31,20 @@ class RadioCard extends Radio
         }
         return $this->borderColor;
     }
+
+    public function cardColumns(int $columns)
+    {
+        $this->cardColumns = $columns;
+
+        return $this;
+    }
+
+    public function getCardColumns()
+    {
+        if (empty($this->cardColumns)) {
+            $this->cardColumns = 5;
+        }
+
+        return $this->cardColumns;
+    }
 }
