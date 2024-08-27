@@ -13,23 +13,36 @@ class RadioCard extends Radio
 
     protected int $cardColumns;
 
-    protected string $borderColor;
+    protected array $borderColors = ['default' => '#d4d4d8', 'selected' => '#3540e6'];
+
+    protected string $wireModel;
 
     protected string $view = 'filament-radio-card::radio-card';
 
-    public function borderColor(string $color = 'var(--primary-500)')
+    protected string $maxCardWidth = "300px";
+
+    public function borderColors(array $colors = ['default' => '#d4d4d8', 'selected' => '#3540e6'])
     {
-        $this->borderColor = $color;
+        $this->borderColors = $colors;
 
         return $this;
     }
 
-    public function getBorderColor()
+    public function getBorderColors(): array
     {
-        if (empty($this->borderColor)) {
-            $this->borderColor = '#e4e4e7';
-        }
-        return $this->borderColor;
+        return $this->borderColors;
+    }
+
+    public function maxCardWidth(string $width)
+    {
+        $this->maxCardWidth = $width;
+
+        return $this;
+    }
+
+    public function getMaxCardWidth()
+    {
+        return $this->maxCardWidth;
     }
 
     public function cardColumns(int $columns)
@@ -42,9 +55,14 @@ class RadioCard extends Radio
     public function getCardColumns()
     {
         if (empty($this->cardColumns)) {
-            $this->cardColumns = 5;
+            $this->cardColumns = count($this->getOptions());
         }
 
         return $this->cardColumns;
+    }
+
+    public function getRowSpan()
+    {
+        return max(array_map('count', $this->getOptions())) - 2;
     }
 }
