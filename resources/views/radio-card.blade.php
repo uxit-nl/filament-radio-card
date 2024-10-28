@@ -14,7 +14,7 @@
                 }"
                 class="cursor-pointer rounded-xl border-2 shadow-sm  p-4"
             >
-                <x-filament-radio-card::card-content :$option />
+                @include($getContentView(), ['option' => $option])
                 <input
                     type="radio"
                     class="sr-only"
@@ -22,7 +22,6 @@
                     x-model="card"
                     value="{{ $option['value'] }}"
                 />
-
             </label>
         @endforeach
     </div>

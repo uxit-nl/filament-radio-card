@@ -9,13 +9,11 @@ use Illuminate\Contracts\Support\Htmlable;
 
 class RadioCard extends Radio
 {
-    protected array|Arrayable|Closure $images = [];
-
     protected int $cardColumns;
 
-    protected array $borderColors = ['default' => '#d4d4d8', 'selected' => '#3540e6'];
-
     protected string $wireModel;
+
+    protected array $borderColors = ['default' => '#d4d4d8', 'selected' => '#3540e6'];
 
     protected string $view = 'filament-radio-card::radio-card';
 
@@ -23,7 +21,7 @@ class RadioCard extends Radio
 
     protected string $maxCardWidth = "300px";
 
-    public function borderColors(array $colors = ['default' => '#d4d4d8', 'selected' => '#3540e6'])
+    public function borderColors(array|null $colors)
     {
         $this->borderColors = $colors;
 
@@ -33,6 +31,18 @@ class RadioCard extends Radio
     public function getBorderColors(): array
     {
         return $this->borderColors;
+    }
+
+    public function contentView(null|string $view = null)
+    {
+        $this->contentView = $view;
+
+        return $this;
+    }
+
+    public function getContentView(): string
+    {
+        return $this->contentView;
     }
 
     // public function maxCardWidth(string $width)

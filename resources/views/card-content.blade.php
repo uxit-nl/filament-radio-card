@@ -4,8 +4,6 @@
             :style="{
                 'background-color': card === '{{ $option['value'] }}' ?
                     '{{ $getBorderColors()['selected'] }}' : '{{ $getBorderColors()['default'] }}',
-                // 'color': card === '{{ $option['value'] }}' ?
-                //     'white' : 'black'
             }"
             class="absolute top-0 flex gap-2 justify-center items-center left-1/2 w-56 p-3 z-10 text-center rounded-b-xl  -translate-x-1/2"
         >
