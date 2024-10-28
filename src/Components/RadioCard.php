@@ -19,6 +19,8 @@ class RadioCard extends Radio
 
     protected string $view = 'filament-radio-card::radio-card';
 
+    protected string $contentView = 'filament-radio-card::card-content';
+
     protected string $maxCardWidth = "300px";
 
     public function borderColors(array $colors = ['default' => '#d4d4d8', 'selected' => '#3540e6'])
@@ -33,36 +35,36 @@ class RadioCard extends Radio
         return $this->borderColors;
     }
 
-    public function maxCardWidth(string $width)
-    {
-        $this->maxCardWidth = $width;
+    // public function maxCardWidth(string $width)
+    // {
+    //     $this->maxCardWidth = $width;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    public function getMaxCardWidth()
-    {
-        return $this->maxCardWidth;
-    }
+    // public function getMaxCardWidth()
+    // {
+    //     return $this->maxCardWidth;
+    // }
 
-    public function cardColumns(int $columns)
-    {
-        $this->cardColumns = $columns;
+    // public function cardColumns(int $columns)
+    // {
+    //     $this->cardColumns = $columns;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    public function getCardColumns()
-    {
-        if (empty($this->cardColumns)) {
-            $this->cardColumns = count($this->getOptions());
-        }
+    // public function getCardColumns()
+    // {
+    //     if (empty($this->cardColumns)) {
+    //         $this->cardColumns = count($this->getOptions());
+    //     }
 
-        return $this->cardColumns;
-    }
+    //     return $this->cardColumns;
+    // }
 
-    public function getRowSpan()
-    {
-        return max(array_map('count', $this->getOptions())) - 2;
-    }
+    // public function getRowSpan()
+    // {
+    //     return max(array_map('count', $this->getOptions())) - 2;
+    // }
 }
